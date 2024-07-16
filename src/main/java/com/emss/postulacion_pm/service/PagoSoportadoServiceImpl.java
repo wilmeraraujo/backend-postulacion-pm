@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.emss.postulacion_pm.entity.PagoSoportado;
 import com.emss.postulacion_pm.repository.PagoSoportadoRepository;
 
+
 @Service
 public class PagoSoportadoServiceImpl implements PagoSoportadoService {
 
@@ -17,6 +18,11 @@ public class PagoSoportadoServiceImpl implements PagoSoportadoService {
 	@Override
 	public List<PagoSoportado> findAll() {
 		return pagoSoportadoRepository.findAll() ;
+	}
+
+	@Override
+	public List<PagoSoportado> findByRazonSocial(String term) {
+		return pagoSoportadoRepository.findByRazonSocial(term);
 	}
 
 }

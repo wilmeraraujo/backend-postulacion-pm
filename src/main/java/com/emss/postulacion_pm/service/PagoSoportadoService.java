@@ -6,4 +6,5 @@ import com.emss.postulacion_pm.entity.PagoSoportado;
 
 public interface PagoSoportadoService {
 	public List<PagoSoportado> findAll();
+	public List<PagoSoportado> findByRazonSocial(String term);
 }
