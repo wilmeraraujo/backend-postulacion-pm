@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.emss.postulacion_pm.service.PagoSoportadoService;
+import com.emss.postulacion_pm.service.PagoSoportadoFacturaService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping(value = "/api/v1/pago-soportado")
-public class PagoSoportadoController {
+@RequestMapping(value = "/api/v1/pago-soportado-factura")
+public class PagoSoportadoFacturaController {
 
 	@Autowired
-	private PagoSoportadoService pagoSoportadoService;
+	private PagoSoportadoFacturaService pagoSoportadoFacturaService;
 	
 	@GetMapping
 	public ResponseEntity<?> getAll(){
-		return ResponseEntity.ok().body(pagoSoportadoService.findAll());
+		return ResponseEntity.ok().body(pagoSoportadoFacturaService.findAll());
 	}
 	
 	@GetMapping("/search-razon-social/{term}")
 	public ResponseEntity<?> filter(@PathVariable String term){
-		return ResponseEntity.ok(pagoSoportadoService.findByRazonSocial(term));
+		return ResponseEntity.ok(pagoSoportadoFacturaService.findByRazonSocial(term));
 	}
 }

@@ -16,11 +16,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Builder
-@Table(name = "plantilla",schema = "pre_max_anexo_01")
+@Table(name = "pago_soportado_factura",schema = "pre_max_anexo_01")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Plantilla {
-	
+public class PagoSoportadoFactura {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -30,22 +29,6 @@ public class Plantilla {
 	@Column(name = "razon_social", columnDefinition = "varchar(1200)")
 	private String razonSocial;
 	
-	@Column(name = "numero_docto")
-	private String numeroDocto;
-	
-	@Column(columnDefinition = "varchar(1200)")
-	private String notas;
-	
-	@Column(name = "total_COP", columnDefinition = "numeric(15,2)")
-    private BigDecimal totalCOP;
-	
-	@Column(name = "cuenta_cobro")
-	private String cuentaCobro;
-	
-	@Column(name = "numero_radicado")
-	private String numeroRadicado;
-	
-	@Column(name = "valor_pagar", columnDefinition = "numeric(15,2)")
-    private BigDecimal valorPagar;
-
+	@Column(name = "valor_posible_pago")
+	private BigDecimal valorPosiblePago;
 }
